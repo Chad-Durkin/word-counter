@@ -8,6 +8,12 @@ using System.Collections.Generic;
        private string _word;
        private string _sentence;
 
+       public RepeatCounter(string word, string sentence)
+       {
+         _word = word;
+         _sentence = _sentence;
+       }
+
        //Getters and Setters
        public string GetWord()
        {

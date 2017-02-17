@@ -8,7 +8,7 @@ namespace RepeatCounterAppTests
     public class ClassTest
     {
         [Fact]
-        public void methodWeAreTesting_whatBehaviorWeAreTesting_expectedResultOfTest()
+        public void GetWord_ReturnsUsersWord_DefinedVariable()
         {
             //arrange
             //act
