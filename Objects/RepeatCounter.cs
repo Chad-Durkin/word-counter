@@ -18,7 +18,21 @@ namespace RepeatCounterApp.Objects
             _sentence = sentence;
             _legalSentence = CheckSentenceLength();
             _sentenceWords = BreakDownSentence();
+            _wordFound = CheckForWord();
             _checkedCases.Add(this);
+        }
+
+        public bool CheckForWord()
+        {
+            for(var index = 0; index < _sentenceWords.Length; index++)
+            {
+                if(_sentenceWords[index].ToLower() == _word.ToLower ())
+                {
+                    return true;
+                }
+            }
+
+            return false;
         }
 
         public bool CheckSentenceLength()
@@ -71,6 +85,10 @@ namespace RepeatCounterApp.Objects
         public string[] GetSentenceWords()
         {
             return _sentenceWords;
+        }
+        public bool CheckIfWordFound()
+        {
+            return _wordFound;
         }
         //Clear out Objects
         public static void DeleteAll()

@@ -60,6 +60,20 @@ namespace RepeatCounterAppTests
             Assert.Equal(checkSentence[2], theSentence[2]);
         }
 
+        [Fact]
+        public void CheckForWord_ReturnsTrueIfWordIsInSentence_DefinedVariable()
+        {
+            //arrange
+            string testWord = "you";
+            string testSentence = "Hey you, man";
+            bool wordFound = true;
+            //act
+            RepeatCounter newInput = new RepeatCounter(testWord, testSentence);
+
+            //assert
+            Assert.Equal(wordFound, newInput.CheckIfWordFound());
+        }
+
         public void Dispose()
         {
             RepeatCounter.DeleteAll();
