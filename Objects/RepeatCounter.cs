@@ -8,18 +8,33 @@ namespace RepeatCounterApp.Objects
         private string _word;
         private string _sentence;
         private bool _legalSentence;
-        private bool _wordFound;
+        private bool _wordFound = false;
         private string[] _sentenceWords;
+        private int _wordCount;
         private static List<RepeatCounter> _checkedCases = new List<RepeatCounter>();
 
         public RepeatCounter(string word, string sentence)
         {
             _word = word;
             _sentence = sentence;
-            _legalSentence = CheckSentenceLength();
-            _sentenceWords = BreakDownSentence();
-            _wordFound = CheckForWord();
+            // _legalSentence = CheckSentenceLength();
+            // _sentenceWords = BreakDownSentence();
+            // _wordFound = CheckForWord();
+            _wordCount = CountRepeats(_word, _sentence);
             _checkedCases.Add(this);
+        }
+
+        public int CountRepeats(string word, string sentence)
+        {
+            if(_legalSentence = CheckSentenceLength())
+            {
+                _sentenceWords = BreakDownSentence();
+                if(_wordFound = CheckForWord())
+                {
+                    return _wordCount;
+                }
+            }
+            return 0;
         }
 
         public bool CheckForWord()
@@ -28,11 +43,12 @@ namespace RepeatCounterApp.Objects
             {
                 if(_sentenceWords[index].ToLower() == _word.ToLower ())
                 {
-                    return true;
+                    _wordCount++;
+                    _wordFound = true;
                 }
             }
 
-            return false;
+            return _wordFound;
         }
 
         public bool CheckSentenceLength()
@@ -89,6 +105,10 @@ namespace RepeatCounterApp.Objects
         public bool CheckIfWordFound()
         {
             return _wordFound;
+        }
+        public int GetWordCount()
+        {
+            return  _wordCount;
         }
         //Clear out Objects
         public static void DeleteAll()
