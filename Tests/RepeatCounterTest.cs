@@ -12,11 +12,23 @@ namespace RepeatCounterAppTests
         {
             //arrange
             string testWord = "Great";
-            string testString = "Here is my great sentence.";
+            string testSentence = "Here is my great sentence.";
             //act
-            RepeatCounter newInput = new RepeatCounter(testWord, testString);
+            RepeatCounter newInput = new RepeatCounter(testWord, testSentence);
             //assert
             Assert.Equal(testWord, newInput.GetWord());
+        }
+
+        [Fact]
+        public void GetSentence_ReturnsUsersSentence_DefinedVariable()
+        {
+            //arrange
+            string testWord = "Great";
+            string testSentence = "Here is my great sentence.";
+            //act
+            RepeatCounter newInput = new RepeatCounter(testWord, testSentence);
+            //assert
+            Assert.Equal(testSentence, newInput.GetSentence());
         }
     }
 }
