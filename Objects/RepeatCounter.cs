@@ -7,12 +7,25 @@ using System.Collections.Generic;
      {
        private string _word;
        private string _sentence;
-       private bool _legalWord;
+       private bool _legalSentence;
 
        public RepeatCounter(string word, string sentence)
        {
          _word = word;
          _sentence = sentence;
+         _legalSentence = CheckSentenceLength();
+       }
+
+       public bool CheckSentenceLength()
+       {
+         if(_sentence.Length >= _word.Length)
+         {
+           return true;
+         }
+         else
+         {
+           return false;
+         }
        }
 
        //Getters and Setters
@@ -31,6 +44,10 @@ using System.Collections.Generic;
        public void SetSentence(string sentence)
        {
          _sentence = sentence;
+       }
+       public string GetLegalSentence()
+       {
+         return _legalSentence;
        }
      }
  }
