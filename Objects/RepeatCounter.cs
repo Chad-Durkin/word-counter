@@ -11,7 +11,7 @@ using System.Collections.Generic;
        public RepeatCounter(string word, string sentence)
        {
          _word = word;
-         _sentence = _sentence;
+         _sentence = sentence;
        }
 
        //Getters and Setters

@@ -11,8 +11,12 @@ namespace RepeatCounterAppTests
         public void GetWord_ReturnsUsersWord_DefinedVariable()
         {
             //arrange
+            string testWord = "Great";
+            string testString = "Here is my great sentence.";
             //act
+            RepeatCounter newInput = new RepeatCounter(testWord, testString);
             //assert
+            Assert.Equal(testWord, newInput.GetWord());
         }
     }
 }
