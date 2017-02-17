@@ -1,9 +1,9 @@
 using Xunit;
-using Namespace.Objects;
+using RepeatCounterApp.Objects;
 using System;
 using System.Collections.Generic;
 
-namespace Namespace
+namespace RepeatCounterAppTests
 {
     public class ClassTest
     {
