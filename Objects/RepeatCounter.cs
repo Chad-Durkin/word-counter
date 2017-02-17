@@ -11,17 +11,16 @@ namespace RepeatCounterApp.Objects
         private bool _wordFound = false;
         private string[] _sentenceWords;
         private int _wordCount;
-        private static List<RepeatCounter> _checkedCases = new List<RepeatCounter>();
+        private static Dictionary<string, string> _checkedCases = new Dictionary<string, string>();
 
         public RepeatCounter(string word, string sentence)
         {
             _word = word;
             _sentence = sentence;
-            // _legalSentence = CheckSentenceLength();
-            // _sentenceWords = BreakDownSentence();
-            // _wordFound = CheckForWord();
             _wordCount = CountRepeats(_word, _sentence);
-            _checkedCases.Add(this);
+            _checkedCases["word"] = _word;
+            _checkedCases["sentence"] = _sentence;
+            _checkedCases["word count"] = _wordCount.ToString();
         }
 
         public int CountRepeats(string word, string sentence)
@@ -69,11 +68,6 @@ namespace RepeatCounterApp.Objects
 
             string[] seperateWords = _sentence.Split(specialChars, StringSplitOptions.RemoveEmptyEntries);
 
-            foreach(string word in seperateWords)
-            {
-                Console.WriteLine(word);
-            }
-
             return seperateWords;
         }
 
@@ -109,6 +103,10 @@ namespace RepeatCounterApp.Objects
         public int GetWordCount()
         {
             return  _wordCount;
+        }
+        public Dictionary<string, string> GetWordInfo()
+        {
+            return _checkedCases;
         }
         //Clear out Objects
         public static void DeleteAll()

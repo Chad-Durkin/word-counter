@@ -1,3 +1,13 @@
 @{
   Layout="Shared/_Layout.cshtml";
 }
+
+<h1 id="header">Enter a Word and a Sentence, and this app will count how many times that word is in the sentence</h1>
+
+<form action="/wordcount" method="post">
+    <label for="word">Word:</label>
+    <input type="text" name="word">
+    <label for="sentence">Sentence:</label>
+    <input type="text" name="sentence">
+    <button type="submit" name="button">Lets Find That Word!</button>
+</form>

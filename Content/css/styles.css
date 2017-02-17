@@ -1,0 +1,31 @@
+.jumbotron {
+    background-color: #034f84;
+    color: #f7786b;
+}
+
+body {
+    background-color: #92a8d1;
+    text-align: center;
+}
+
+#header {
+    text-align: center;
+    padding: 20px;
+    background-color: #f7786b;
+    color: #034f84;
+}
+
+form {
+    margin-top: 100px;
+    text-align: center;
+}
+
+a {
+    color: white;
+    text-decoration: underline;
+}
+
+.output {
+    background-color: #034f84;
+    color: #f7786b;
+}
