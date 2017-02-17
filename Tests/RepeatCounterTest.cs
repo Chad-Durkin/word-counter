@@ -74,6 +74,20 @@ namespace RepeatCounterAppTests
             Assert.Equal(wordFound, newInput.CheckIfWordFound());
         }
 
+        [Fact]
+        public void CountWordRepeats_ReturnTotalNumberOfWordRepeats_DefinedVariable()
+        {
+            //arrange
+            string testWord = "you";
+            string testSentence = "Hey you, you, you, you, man";
+            int wordCount = 4;
+            //act
+            RepeatCounter newInput = new RepeatCounter(testWord, testSentence);
+
+            //assert
+            Assert.Equal(wordCount, newInput.GetWordCount());
+        }
+
         public void Dispose()
         {
             RepeatCounter.DeleteAll();
