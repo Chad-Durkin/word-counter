@@ -7,6 +7,7 @@ using System.Collections.Generic;
      {
        private string _word;
        private string _sentence;
+       private bool _legalWord;
 
        public RepeatCounter(string word, string sentence)
        {
