@@ -45,7 +45,7 @@ using System.Collections.Generic;
        {
          _sentence = sentence;
        }
-       public string GetLegalSentence()
+       public bool GetLegalSentence()
        {
          return _legalSentence;
        }

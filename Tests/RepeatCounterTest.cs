@@ -30,5 +30,18 @@ namespace RepeatCounterAppTests
             //assert
             Assert.Equal(testSentence, newInput.GetSentence());
         }
+
+        [Fact]
+        public void GetLegalSentence_ReturnsUsersLegalStatusOfSentenceLength_DefinedVariable()
+        {
+            //arrange
+            string testWord = "Great";
+            string testSentence = "Good";
+            bool testSentenceLength = false;
+            //act
+            RepeatCounter newInput = new RepeatCounter(testWord, testSentence);
+            //assert
+            Assert.Equal(testSentenceLength, newInput.GetLegalSentence());
+        }
     }
 }
