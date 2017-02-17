@@ -7,36 +7,36 @@ using Nancy.ViewEngines.Razor;
 
 namespace RepeatCounterApp
 {
-  public class Startup
-  {
-    public void Configure(IApplicationBuilder app)
+    public class Startup
     {
-      app.UseOwin(x => x.UseNancy());
+        public void Configure(IApplicationBuilder app)
+        {
+            app.UseOwin(x => x.UseNancy());
+        }
     }
-  }
-  public class CustomRootPathProvider : IRootPathProvider
-  {
-    public string GetRootPath()
+    public class CustomRootPathProvider : IRootPathProvider
     {
-      return Directory.GetCurrentDirectory();
-    }
-  }
-
-  public class RazorConfig : IRazorConfiguration
-  {
-    public IEnumerable<string> GetAssemblyNames()
-    {
-      return null;
+        public string GetRootPath()
+        {
+            return Directory.GetCurrentDirectory();
+        }
     }
 
-    public IEnumerable<string> GetDefaultNamespaces()
+    public class RazorConfig : IRazorConfiguration
     {
-      return null;
-    }
+        public IEnumerable<string> GetAssemblyNames()
+        {
+            return null;
+        }
 
-    public bool AutoIncludeModelNamespace
-    {
-      get { return false; }
+        public IEnumerable<string> GetDefaultNamespaces()
+        {
+            return null;
+        }
+
+        public bool AutoIncludeModelNamespace
+        {
+            get { return false; }
+        }
     }
-  }
 }

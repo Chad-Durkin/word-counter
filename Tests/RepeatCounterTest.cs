@@ -24,7 +24,7 @@ namespace RepeatCounterAppTests
         {
             //arrange
             string testWord = "Great";
-            string testSentence = "Here is my great sentence.";
+            string testSentence = "Here is my, great sentence.";
             //act
             RepeatCounter newInput = new RepeatCounter(testWord, testSentence);
             //assert
@@ -42,6 +42,22 @@ namespace RepeatCounterAppTests
             RepeatCounter newInput = new RepeatCounter(testWord, testSentence);
             //assert
             Assert.Equal(testSentenceLength, newInput.GetLegalSentence());
+        }
+
+        [Fact]
+        public void GetSeperateWords_ReturnsUsersSentenceBrokeIntoIndividualWords_DefinedVariable()
+        {
+            //arrange
+            string testWord = "Great";
+            string testSentence = "Hey you, man";
+            string[] checkSentence = new string[] {"Hey", "you", "man"};
+            string[] theSentence;
+            //act
+            RepeatCounter newInput = new RepeatCounter(testWord, testSentence);
+            theSentence = newInput.GetSentenceWords();
+
+            //assert
+            Assert.Equal(checkSentence[2], theSentence[2]);
         }
     }
 }

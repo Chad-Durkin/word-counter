@@ -7,7 +7,7 @@ Plain English Specs
 	input: Here is my sentence. //I chose this input for a basic sentence example
 	output: Here is my sentence.
 3. Check if the sentence is longer than the word
-	input: Word: California Sentence: Hi you. //I chose this input to show what would return false
+	input: Word: Great Sentence: Good//I chose this input to show what would return false
 	output: False;
 4. Break the sentence down into words
 	input: Hey you, man. //I chose this input for one reason, its simple and to the point
