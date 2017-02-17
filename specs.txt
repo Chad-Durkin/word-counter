@@ -1,0 +1,23 @@
+Plain English Specs
+
+1. User Inputs a word
+	input: Great //I chose this input for a basic word example
+	output: Great
+2. User Inputs a sentence
+	input: Here is my sentence. //I chose this input for a basic sentence example
+	output: Here is my sentence.
+3. Check if the user inputed a word.
+	input: Great //I chose this for a consistant word example
+	output: True
+4. Check if the sentence is longer than the word
+	input: Word: California Sentence: Hi you. //I chose this input to show what would return false
+	output: False;
+5. Break the sentence down into words
+	input: Hey you, man. //I chose this input for one reason, its simple and to the point
+	output: {hey, you, man}
+6. Search sentence for the word the user inputed
+	input: Word:Hey Sentence: Hey how are you. //I chose this because it wasn't complex and displayed the information I wanted
+	output: True;
+7. Count how many times the word is in the sentence
+	input: Word: Hey Sentence: Hey man hey hey hey, how are you. //I chose this because I thought it displayed what I was looking for
+	output: 4
