@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace RepeatCounterAppTests
 {
-    public class ClassTest
+    public class RepeatCounterAppTest : IDisposable
     {
         [Fact]
         public void GetWord_ReturnsUsersWord_DefinedVariable()
@@ -58,6 +58,11 @@ namespace RepeatCounterAppTests
 
             //assert
             Assert.Equal(checkSentence[2], theSentence[2]);
+        }
+
+        public void Dispose()
+        {
+            RepeatCounter.DeleteAll();
         }
     }
 }

@@ -8,7 +8,9 @@ namespace RepeatCounterApp.Objects
         private string _word;
         private string _sentence;
         private bool _legalSentence;
+        private bool _wordFound;
         private string[] _sentenceWords;
+        private static List<RepeatCounter> _checkedCases = new List<RepeatCounter>();
 
         public RepeatCounter(string word, string sentence)
         {
@@ -16,6 +18,7 @@ namespace RepeatCounterApp.Objects
             _sentence = sentence;
             _legalSentence = CheckSentenceLength();
             _sentenceWords = BreakDownSentence();
+            _checkedCases.Add(this);
         }
 
         public bool CheckSentenceLength()
@@ -68,6 +71,11 @@ namespace RepeatCounterApp.Objects
         public string[] GetSentenceWords()
         {
             return _sentenceWords;
+        }
+        //Clear out Objects
+        public static void DeleteAll()
+        {
+            _checkedCases.Clear();
         }
     }
 }
